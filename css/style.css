@@ -1,0 +1,81 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: aqua;
+    --secondary-color: #505050;
+    --alternative: silver;
+    --awesome: red;
+    --mainBoxShadow:.7vw .5vw .3vw #323232;
+    --borderColor: rgb(192, 192, 192);
+    --elementShadow: .2vw .3vw .2vw #323232;
+}
+
+i:hover{
+color: red;
+}
+button:hover{
+    background-color: rgb(97, 97, 97);
+}
+button{
+    background-color:#505050;
+    color: aqua;
+    border-radius: 15vh;
+    margin-top: 3px;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  
+}
+
+.body{
+    width: 20rem;
+    aspect-ratio: 2/3;
+    background-color: var(--alternative);
+/* background: linear-gradient(silver , grey, darkgrey,black 30%,white); */
+    box-shadow: var(--mainBoxShadow);
+    border: 15px double silver;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* .body :nth-child(1),:last-child{ 
+    grid-column: 1 / -1;
+}*/
+
+.body :is(:nth-child(1),:last-child) {
+    grid-column: 1 / -1;
+}
+
+input[data-output]{
+    text-align : right;
+    border: 3px solid black;
+    border-radius: 10px 10px 10px 10px; 
+}
+
+:is(button, input) {
+    box-shadow: var(--elementShadow);
+    font-weight: bolder;
+    font-size: 1.1rem;
+    transition: all 1s;
+    &:hover {
+        box-shadow: unset;
+        border: 2px solid var(--primary-color);
+    }
+}
+
+button[dataoperator] {
+    background-color: red;
+    color: black;
+}
